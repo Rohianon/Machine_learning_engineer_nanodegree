@@ -18421,7 +18421,7 @@ UOvgAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Observation">Observation<a class="anchor-link" href="#Observation">&#182;</a></h3><p>After applying a natural logarithm scaling to the data, the distribution of each feature should appear much more normal. For any pairs of features we may have identified earlier as being correlated, observe here whether that correlation is still present (and whether it is now stronger or weaker than before).</p>
+<h3 id="Observation">Observation<a class="anchor-link" href="#Observation">&#182;</a></h3><p>After applying a natural logarithm scaling to the data, the distribution of each feature should appear much more log-normal. For any pairs of features we may have identified earlier as being correlated, observe here whether that correlation is still present (and whether it is now stronger or weaker than before).</p>
 <p>Run the code below to see how the sample data has changed after having the natural logarithm applied to it.</p>
 
 </div>
@@ -19726,6 +19726,8 @@ SZIkSSqWgUiSJElSsQxEkiRJkoplIJIkSZJULAORJEmSpGL9DyNJfKgklYs0AAAAAElFTkSuQmCC
 <li>When we combine 3rd and 4th Principal Component, each contributing 12.31% and 10.12% respectively individually, we can explain 93.11% variance in the data.</li>
 <li>From the First Principal Component or Dimension 1, we see the maximum weightage is given on Milk, Grocery and Detergents/Paper. Note that these were the three features which we found out were maximum correlated to each other. The 2nd dimension, being orthogonal to the First one, reduces the impact of Milk, Grocery and Detergents/paper and gives more weightage to Fresh, Frozen and Delicatessen. The Third dimension implies low Fresh spending and high Delicatessen spending. The 4th dimension shows low Delicatessen spending and high Frozen spending.</li>
 </ul>
+<p>Note here that feature weights are interchangeable (ref.) (the signs of the PCA weights in a dimension can be flipped on running the code again). So a large weight in any direction (positive or negative) will indicate a higher purchase value for the feature. If two features are opposite in sign (in a dimension), it means that they are inversely correlated, and not that the customers in the dimension buy more of the positive weighted feature and lower of the negative weighted features. Similarly, a low feature weight (in positive or negative direction) indicates that the customer buys lesser from this feature.</p>
+<p>In other words, we should look at the absolute value of the feature weight when deciding the quantity of items brought from that feature. When looking at the correlation between the features, we should look at their signs (positive or negative).</p>
 
 </div>
 </div>
@@ -22998,7 +23000,7 @@ Sample point 2 predicted to be in Cluster 1
 <li>Customers belonging to Cluster 0 will most likely react negatively as they would require fresh food regularly to serve their customers.</li>
 <li>Customers belonging to Cluster 1 buys a wide variety of goods which are both perishable and non-perishable. So they may be more flexible to the changing delivery service from 5 days a week to 3 days a week as they regularly won't require most of their products.</li>
 </ul>
-<p>The Company should perform A/B tests with the above facts in mind and then generalize. By picking a subset customers from each Cluster, they can evaluate feedback seperately which most likely will be different from each other. It could be established whether changing the delivery service is critical to each segment, and whether customers are happy with the change.</p>
+<p>The main idea is that we need to run two separate A/B tests for each of the clusters. We can judge the impact of the changed delivery schedule on each cluster, and then combine our findings to implement the change only for individual clusters or both the clusters or none of them.</p>
 <p>If a trend is found in a particular cluster, it allows a business to make educated and targeted decisions that would benefit their customers going forward depending on their profile. This is as opposed to which would generalize the entire customer-base.</p>
 
 </div>
