@@ -4,15 +4,15 @@ A real-time object recognition application using [Google's TensorFlow Object Det
 
 # Description of folders
 
-** Annotations:**contains xml annotations of the images
-** Data:**contains tfrecord and the csv train/test files
-** mickey_graph:**contains the final frozen graph after training
-** ssd_mobilenet_v1_coco_11_06_2017:**contains mobilenet frozen graph
-** object-detection:**contains the protobuf image label file
-** generate_tfrecord.py:**script to convert files to tfrecords
-** ssd_mobilenet_v1_pets.config:**Object detection pipeline file
-** train_and_eval_script.txt:**script to start the training and eval process
-** visualization_utils.py:**contains the code for pyttsx module having 90 custom generated voice messages.
+** Annotations:** contains xml annotations of the images
+** Data:** contains tfrecord and the csv train/test files
+** mickey_graph:** contains the final frozen graph after training
+** ssd_mobilenet_v1_coco_11_06_2017:** contains mobilenet frozen graph
+** object-detection:** contains the protobuf image label file
+** generate_tfrecord.py:** script to convert files to tfrecords
+** ssd_mobilenet_v1_pets.config:** Object detection pipeline file
+** train_and_eval_script.txt:** script to start the training and eval process
+** visualization_utils.py:** contains the code for pyttsx module having 90 custom generated voice messages.
 
 ## Getting Started
 1. `python object_detection_app.py` 
